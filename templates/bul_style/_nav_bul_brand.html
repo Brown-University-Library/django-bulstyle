@@ -1,0 +1,42 @@
+<nav id="header-navbar" class="navbar navbar-inverse" role="navigation">
+  <div class="container{{fluid}}">
+    <div class="navbar-header">
+      <button type="button" 
+        class="navbar-toggle collapsed" 
+        data-toggle="collapse"
+        data-target="#subnav-collapse,#search-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand library-brand" href="//library.brown.edu"></a>
+    </div>
+    {% block navbar-search-form %}
+    <form action="{% block navbar-search-url %}{% url 'search2' %}{%endblock%}" 
+      method="get"
+      class="navbar-form navbar-right collapse navbar-collapse" 
+      id="search-collapse"
+      accept-charset="UTF-8">
+
+      <div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <label for="q" class="sr-only">Enter keywords to search library resources</label>
+      <div class="input-group">
+        <input type="text"
+               class="form-control" 
+               id="q" 
+               name="q" 
+               placeholder="{% block navbar-search-placeholder %}Search the BDR{% endblock %}">
+        <span class="input-group-btn">
+          <button type="submit" 
+            class="btn btn-primary search-btn" 
+            id="search">
+            <span class="submit-search-text">Search</span>
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+      </div>
+    </form>
+    {% endblock navbar-search-form %}
+  </div>
+</nav>
