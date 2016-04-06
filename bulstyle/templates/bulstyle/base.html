@@ -12,7 +12,7 @@
 
 {% block bootstrap3_content %}
   {% with fluid="" %}
-  {% include "bul_style/_nav_libnav.html" %}
+  {% include "bulstyle/_nav_libnav.html" %}
 
   <nav id="header-navbar" class="navbar navbar-inverse" role="navigation">
     <div class="container{{fluid}}">
@@ -80,7 +80,7 @@
   {% endblock %}
 
   <div class="container{{fluid}}">
-    {% include "bul_style/messages.html" %}
+    {% include "bulstyle/messages.html" %}
     {% autoescape off %}
       {% include "bootstrap3/messages.html" %}
     {% endautoescape %}
