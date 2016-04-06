@@ -1,0 +1,2 @@
+recursive-include bulstyle/static *
+recursive-include bulstyle/templates *
