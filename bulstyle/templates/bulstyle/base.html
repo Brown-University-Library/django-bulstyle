@@ -12,7 +12,9 @@
 
 {% block bootstrap3_content %}
   {% with fluid="" %}
-  {% include "bulstyle/_nav_libnav.html" %}
+  {% block library_navigation %}
+    {% include "bulstyle/_nav_libnav.html" %}
+  {% endblock %}
 
   <nav id="header-navbar" class="navbar navbar-inverse" role="navigation">
     <div class="container{{fluid}}">
@@ -55,7 +57,6 @@
         </div>
       </form>
       {% endblock navbar-search-form %}
-
     </div>
   </nav>
   {% block subnav %}
