@@ -7,7 +7,7 @@ body {
   font-size: 150%; }
 
 /* adjust top banner styles
-   edits also made to: blacklight.css.scss, _header_navbar.html.erb
+   edits also made to: blacklight.css.scss
    additional edits to come to tweak responsive breakpoints
 */
 #topmost-nav-links {
@@ -54,20 +54,6 @@ body {
     color: #2b0b07;
     font-weight: bold; }
 
-/*.navbar-right {*/
-/*margin-top: -1em;*/
-/*margin-bottom: 1.5em;*/
-/*margin-left: 0;*/
-/*margin-right: 0;*/
-/*float: right;*/
-/*}*/
-/*.navbar-nav {*/
-/*position: relative;*/
-/*margin-left: auto;*/
-/*margin-right: auto;*/
-/*padding-right: 15%;*/
-/*float: right;*/
-/*}*/
 #search-navbar {
   background-color: none;
   float: right;
@@ -149,6 +135,11 @@ body {
 .label-info[href]:hover, .label-info[href]:focus {
   background-color: #7bab54; }
 
+/*!
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
