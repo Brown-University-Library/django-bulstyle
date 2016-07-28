@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='django-bulstyle',
-    version='1.1',
+    version='1.2a1',
     description='Theme for Brown University Library Django Projects',
     packages=['bulstyle'],
     zip_safe=False,
