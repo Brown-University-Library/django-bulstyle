@@ -1,0 +1,66 @@
+#header-navbar {
+  margin-top: 1.9em;
+  border: none;
+  border-top: $brand-primary .33em solid;
+  background-color: $brown;
+  border-radius: 0px;
+  @include box-shadow( inset 0 -5px 0px 0px $subnav-inverse-bg); 
+}
+
+#header-navbar .navbar-brand {
+  width: 307px;
+  height: 87px;
+  background: transparent url($brand-image-sm) no-repeat left center;
+  margin-top: -17px;
+}
+
+#header-navbar .navbar-form {
+	margin-top: 0px;
+}
+
+@media (min-width: $screen-md){
+  #header-navbar .navbar-brand {
+    width: 501px;
+    background: transparent url($brand-image-lg) no-repeat left center;
+  }
+
+  .navbar-justified {
+    margin: 0 auto;
+    display: table;
+    table-layout: fixed;
+    float: none;
+  }
+  .navbar-justified > li {
+    display: table-cell;
+    float: none;
+  }
+}
+
+@media (min-width: $screen-sm) {
+  #header-navbar .navbar-form {
+    margin-top: 14px;
+  }
+
+  input#q {
+    width: 235px;
+  }
+}
+.search-btn {
+  background-color: $gold;
+  border-color: $gold;
+  line-height: 20px;
+}
+input#q {
+  border-radius: 0px; 
+}
+/* Generic layout stuff */
+
+.navbar + .navbar {
+  margin-top: -$navbar-margin-bottom;
+}
+
+.navbar-inverse .navbar-toggle {
+  &:focus, &:hover {
+    border-color: $gray-light;
+  }
+}
