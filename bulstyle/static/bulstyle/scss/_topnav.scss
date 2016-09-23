@@ -1,0 +1,29 @@
+#topmost-nav-links {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#topmost-nav-links a {
+  color: black;
+  text-decoration: none;
+  font-size: 0.9em;
+
+  &:hover {
+    color: $brand-primary;
+  }
+
+
+}
+
+#topmost-nav-links ul {
+  text-align: center;
+  height: auto;
+  margin-top: .25em;
+  margin-bottom: -1.5em;
+
+  li {
+    display: inline-block;
+    list-style-type: none;
+    margin-right: 2.5em;
+  }
+}

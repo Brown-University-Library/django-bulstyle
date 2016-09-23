@@ -40,3 +40,8 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+lib/
+bulstyle/static/bulstyle/scss/node_modules
+bulstyle/static/bulstyle/scss/bootstrap
+bulstyle/static/bulstyle/scss/blacklight
