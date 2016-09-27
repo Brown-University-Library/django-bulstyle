@@ -1,7 +1,7 @@
 {% extends "bootstrap3/bootstrap3.html" %}
 
 {% block bootstrap3_title %}
-  {% block title %}Brown Digital Repository | {% block title_detail %}Home{% endblock %}{% endblock title %}
+  {% block title %}Brown Univeristy Library| {% block title_detail %}Home{% endblock %}{% endblock title %}
 {% endblock %}
 
 {% block bootstrap3_extra_head %}
@@ -47,7 +47,7 @@
                  class="form-control" 
                  id="q" 
                  name="q" 
-                 placeholder="{% block navbar-search-placeholder %}Search the BDR{% endblock %}">
+                 placeholder="{% block navbar-search-placeholder %}Search Library Resources{% endblock %}">
           <span class="input-group-btn">
             <button type="submit" 
               class="btn btn-primary search-btn" 
@@ -126,7 +126,7 @@
 
 {% block footer %}
   <footer>
-      <div class="container">
+    <div class="container{{fluid}}">
         <div class="row">
           <ul class="pull-right footcrumbs">
             {% block footer-list %}
