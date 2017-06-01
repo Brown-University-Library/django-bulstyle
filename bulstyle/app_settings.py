@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
 from django.conf import settings
 
 BULSTYLE_DEFAULTS = {
@@ -19,4 +18,3 @@ def get_bulstyle_setting(setting, default=None):
 
 def container_class():
     return get_bulstyle_setting('container_class')
-
