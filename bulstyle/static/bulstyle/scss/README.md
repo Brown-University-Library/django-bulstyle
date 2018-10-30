@@ -24,9 +24,9 @@ Ex: `ln -s blacklight/app/assets/stylesheets/blacklight blacklight`
 
 Then you can edit and run
 
-`sassc bulstyle-base.scss ../css/bylstyle-base.css`
+`sassc bulstyle.scss ../css/bylstyle.css`
 
 and
 
-`sassc bulstyle-base.scss ../css/bylstyle-base.css`
+`sassc bulstyle-blacklight.scss ../css/bylstyle-blacklight.css`
 

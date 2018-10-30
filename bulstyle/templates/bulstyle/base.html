@@ -1,4 +1,5 @@
 {% extends "bootstrap3/bootstrap3.html" %}
+{% load bulstyle %}
 
 {% block bootstrap3_title %}
   {% block title %}Brown University Library | {% block title_detail %}Home{% endblock %}{% endblock title %}
@@ -11,13 +12,13 @@
 {% endblock %}
 
 {% block bootstrap3_content %}
-  {% with fluid="" %}
+  {% bulstyle_container as container_class %}
   {% block library_navigation %}
     {% include "bulstyle/_nav_libnav.html" %}
   {% endblock %}
 
   <nav id="header-navbar" class="navbar navbar-inverse" role="navigation">
-    <div class="container{{fluid}}">
+    <div class="{{container_class}}">
       <div class="navbar-header">
         <button type="button" 
           class="navbar-toggle collapsed" 
@@ -29,7 +30,7 @@
             <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand library-brand" href="//library.brown.edu">
-            <span class="sr-only">Brown University Libary</span>
+            <span class="sr-only">Brown University Library</span>
         </a>
       </div>
 
@@ -63,7 +64,7 @@
   </nav>
   {% block subnav %}
   <nav id="subnav" class="navbar navbar-xs" role="navigation">
-  <div class="container{{fluid}}">
+    <div class="{{container_class}}">
     <div class="navbar-header">
       <a class="navbar-brand" href="{% block subnav-brand-link %}#{% endblock %}">
         {% block subnav-title %}SubNavbar title{% endblock %}
@@ -82,16 +83,16 @@
     </nav>
   {% endblock %}
 
-  <div class="container{{fluid}}">
+  <div class="{{container_class}}">
     {% include "bulstyle/messages.html" %}
   </div>
 
-<div class="container{{fluid}}">
+  <div class="{{container_class}}">
   {% block pre_intro %}
   {% endblock %}
 </div>
 
-<div class="container{{fluid}}">
+<div class="{{container_class}}">
   <div class="row ">
       <section>
     {% block intro %} 
@@ -123,7 +124,7 @@
 
 {% block footer %}
   <footer>
-    <div class="container{{fluid}}">
+    <div class="{{container_class}}">
         <div class="row">
           <ul class="pull-right footcrumbs">
             {% block footer-list %}
@@ -136,7 +137,6 @@
       </div>
   </footer>
 {% endblock %}
-  {% endwith %}
 {% endblock %}
 
 {% block bootstrap3_extra_script %}

@@ -50,6 +50,22 @@ Include Blacklight themes
     }
     ```
 
+Optional Settings
+-----------------
+  The following setting will change the main container class for all divs.
+
+  ```python
+  BULSTYLE = {
+    'container_class': 'container', #default
+  }
+  ```
+
+  With this setting you could potentially change to a fluid layout using 
+  ```python
+  BULSTYLE = {
+    'container_class': 'container-fluid',
+  }
+  ```
 
 Legacy Theme
 -------------------------
