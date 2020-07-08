@@ -1,87 +1,61 @@
 {% extends "bootstrap3/bootstrap3.html" %}
 {% load bulstyle %}
+{% load bulpattern %}
 
 {% block bootstrap3_title %}
   {% block title %}Brown University Library | {% block title_detail %}Home{% endblock %}{% endblock title %}
 {% endblock %}
 
 {% block bootstrap3_extra_head %}
-  <link rel="stylesheet" 
+   <link rel="icon" type="image/png" sizes="16x16"
+        href="https://www.brown.edu/themes/custom/brown/static/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32"
+        href="https://www.brown.edu/themes/custom/brown/static/favicon-32x32.png">
+  <link rel="stylesheet"
         href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   {% block extra_css %}{% endblock extra_css %}
+  <style type="text/css" media="all">
+    html {
+      font-size: unset;
+    }
+    .modal {
+      z-index: 1000001;
+    }
+      nav a {
+    border-bottom: 0px;
+  }
+  footer a:link {
+    text-decoration: none;
+  }
+  .panel-title > a {
+    color: #c00404;
+  }
+
+  a {
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(78, 54, 41, .2);
+  }
+  a > .fa {
+    border-bottom: 0px;
+  }
+  a:hover {
+    text-decoration: none;
+    border-bottom: 0px;
+  }
+  h3 .fa:before {
+      color: #aaa;
+      margin-right: 0.5em;
+  }
+  </style>
 {% endblock %}
 
 {% block bootstrap3_content %}
+
   {% bulstyle_container as container_class %}
   {% block library_navigation %}
-    {% include "bulstyle/_nav_libnav.html" %}
+  {% bul_header %}
   {% endblock %}
 
-  <nav id="header-navbar" class="navbar navbar-inverse" role="navigation">
-    <div class="{{container_class}}">
-      <div class="navbar-header">
-        <button type="button" 
-          class="navbar-toggle collapsed" 
-          data-toggle="collapse"
-          data-target="#subnav-collapse,#search-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand library-brand" href="//library.brown.edu">
-            <span class="sr-only">Brown University Library</span>
-        </a>
-      </div>
-
-      {% block navbar-search-form %}
-      <form action="{% block navbar-search-url %}#{%endblock%}" 
-        method="get"
-        class="navbar-form navbar-right collapse navbar-collapse" 
-        id="search-collapse"
-        accept-charset="UTF-8">
-
-        <div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
-          <label for="q" class="sr-only">Enter keywords to search library resources</label>
-        <div class="input-group">
-          <input type="text"
-                 class="form-control" 
-                 id="q" 
-                 name="q" 
-                 placeholder="{% block navbar-search-placeholder %}Search Library Resources{% endblock %}">
-          <span class="input-group-btn">
-            <button type="submit" 
-              class="btn btn-primary search-btn" 
-              id="search">
-              <span class="submit-search-text">Search</span>
-              <span class="glyphicon glyphicon-search"></span>
-            </button>
-          </span>
-        </div>
-      </form>
-      {% endblock navbar-search-form %}
-    </div>
-  </nav>
-  {% block subnav %}
-  <nav id="subnav" class="navbar navbar-xs" role="navigation">
-    <div class="{{container_class}}">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="{% block subnav-brand-link %}#{% endblock %}">
-        {% block subnav-title %}SubNavbar title{% endblock %}
-      </a>
-    </div>
-    <div class="collapse navbar-collapse" id="subnav-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          {% block subnav-list %}
-          <li><a href="#">SNB1</a></li>
-          <li><a href="#">SNB2</a></li>
-          <li><a href="#">SNB3</a></li>
-          {% endblock %}
-        </ul>
-      </div>
-    </div>
-    </nav>
-  {% endblock %}
 
   <div class="{{container_class}}">
     {% include "bulstyle/messages.html" %}
@@ -141,14 +115,5 @@
 
 {% block bootstrap3_extra_script %}
   {% block extra_js %}
-    <script type="text/javascript" charset="utf-8">
-    $('#subnav').affix({
-        offset: {
-          top: 102
-        }
-    });
-    </script>
-    <script src="https://use.typekit.net/cpk3osd.js"></script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
   {% endblock extra_js %}
 {% endblock %}
