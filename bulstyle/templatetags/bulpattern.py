@@ -1,12 +1,13 @@
 from django import template
+from django.template.loader import get_template
 from django.core.cache import cache
 from django.utils.safestring import mark_safe
 from .. import app_settings as settings
 import requests
 
-
 register = template.Library()
 django_engine = template.engines['django']
+BACKUP_HEADER_TEMPLATE = get_template(settings.header_local_backup())
 
 def get_user_context(request):
     user = request.user
@@ -52,7 +53,9 @@ def get_header_string(config_key):
 
 def get_header_template(config_key):
     template_string = get_header_string(config_key)
-    return django_engine.from_string(template_string)
+    if template_string:
+        return django_engine.from_string(template_string)
+    return BACKUP_HEADER_TEMPLATE
 
 @register.simple_tag(takes_context=True)
 def bul_header(context, bul_key=settings.header_subnav_key(), bul_login_key=settings.header_subnav_key()):

@@ -8,6 +8,7 @@ BULSTYLE_DEFAULTS = {
         'header_cache_length': 500,
         'header_subnav_key': '',
         'header_subnav_login_key': '',
+        'header_local_backup': 'bulstyle/BUL_HEADER_BACKUP.html',
 }
 
 BULSTYLE = BULSTYLE_DEFAULTS.copy()
@@ -34,3 +35,6 @@ def header_subnav_key():
 
 def header_subnav_login_key():
     return get_bulstyle_setting('header_subnav_login_key')
+
+def header_local_backup():
+    return get_bulstyle_setting('header_local_backup')
