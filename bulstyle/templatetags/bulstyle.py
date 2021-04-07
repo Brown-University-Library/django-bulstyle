@@ -6,7 +6,7 @@ from ..app_settings import container_class
 
 register = template.Library()
 
-@register.assignment_tag
+@register.simple_tag
 def bulstyle_container():
     """
     **Tag name**::
