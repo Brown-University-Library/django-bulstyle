@@ -1,0 +1,360 @@
+
+		<style>
+			:root {
+			    --brown_brown: #4e3629;
+			    --brown_red: #c00404;
+			    --brown_red_old: #ed1c24;
+			    --brown_yellow: #ffc72c;
+			    --brown_gold: #ffc72c;
+			    --brown_gray: #98a4ae;
+			    --brown_emerald: #00b398;
+			    --brown_navy: #003c71;
+			    --brown_skyblue: #59CBEB;
+			    --brown_taupe: #b7b09c;
+			    --bul_alma_orange: #F47C30;
+			}		
+			footer {
+				background-color : var(--brown_brown) ;
+				width : 100% ; 
+			}		
+			footer #bul_pl_footer { 
+				padding : 100px 0px 0px 0px ; 
+				margin : auto ;
+				width : 100% ; 
+				max-width : 1350px ; 
+				display : grid ;
+				grid-template-areas : 	"address right_aside"
+										"bul_pl_footer_sole bul_pl_footer_sole" ;
+				grid-template-columns : auto 325px ;
+				grid-template-rows : auto 40px ;
+			}		
+			footer #bul_pl_footer_address {
+			    margin-bottom : 16px ;
+			    margin-left : 20px ; 
+			    grid-area : address ;
+			}
+			footer #bul_pl_footer_library_links {
+				border-bottom : 1px solid rgba(183,176,156,0.2) ;
+				margin-right : 50px ; 
+			}
+			footer #right_aside {
+				grid-area : right_aside ;
+				padding-left : 50px ;
+				border-left : 1px solid rgba(183,176,156,0.2); ; 
+			}
+			footer .bul_pl_address_name {
+			    font-size : 0.8125rem ;
+			    letter-spacing : 0.09375rem ;
+				font-family : "CircularStd" ;
+				font-weight : 400 ;
+				display : block ;
+				color : #B7B09C ;
+				text-transform : uppercase ;
+				margin-bottom : 28px ;
+			}		
+			footer .bul_pl_address_items {
+				margin-right : 50px ; 
+			}
+			
+			footer .bul_pl_address_items a {
+				text-decoration : none ;
+				color : #fff ;
+				font-size : clamp(18px, 2vw, 26px) ;
+				line-height : 1.33333 ;
+			}			
+			footer #bul_pl_footer_address .icon_marker_svg, footer #bul_pl_footer_address .icon_phone_svg {
+				fill : rgba(255,255,255,0.2) ; 
+				margin-right : 5px ;
+				max-height : 16px ; 
+			}
+			footer #bul_pl_footer_address .icon_marker_svg {
+				height : clamp(16px, 1.4vw, 20px) ; 
+				width : 2vw ; 
+			}
+			footer #bul_pl_footer_address .icon_phone_svg {
+				height : clamp(16px, 1.4vw, 20px) ; 
+				width : 2vw ; 
+			}		
+			footer .bul_pl_footer_phone_details_icon {
+				margin-left : 40px ; 
+			}
+			
+			ul {
+				padding : 0 ;
+			}
+			footer #bul_pl_footer_library_links, footer #bul_pl_footer_brown_links {
+				margin-top : 20px ; 
+			}
+			footer #bul_pl_footer_library_links li, footer #bul_pl_footer_brown_links li {
+				list-style-type : none ; 
+				display : inline-block ;
+				margin-right : 20px ;
+			}
+			footer #bul_pl_footer_library_links a, footer #bul_pl_footer_brown_links a, footer #right_aside a {
+				font-family : "CircularStd",sans-serif ;
+				font-weight : 400 ;
+				letter-spacing : 0.09375rem ;
+				margin-right : 2px ;
+				text-transform : uppercase ;
+				color : var(--brown_gold) ;
+				text-decoration : none ;
+				font-size : 0.8125rem ;
+				transition : all .25s ease-in-out ;
+			}
+			footer #bul_pl_footer_library_links a:hover, footer #bul_pl_footer_brown_links a:hover {
+				color : #fff ;
+				transition : all .25s ease-in-out ;
+			}				
+			@keyframes changeSymbolOut {
+				0% {
+					opacity : 0 ;
+				}
+				100% {
+					opacity : 1 ;
+				}
+			}		
+			@keyframes changeSymbolIn {
+				0% {
+					opacity : 0 ;
+				}
+				100% {
+					opacity : 1 ;
+				}
+			}		
+			footer #bul_pl_footer_library_links a:after, footer #bul_pl_footer_brown_links a:after, footer a.footer_give_link:after {
+				content : " " url("data:image/svg+xml;utf8,<svg viewBox='0 -15 25 25' xmlns='http://www.w3.org/2000/svg' width='24px' height='24px' fill='%23ffc72c'><path d='M9.427.135a.527.527 0 00-.705 0 .428.428 0 000 .639l3.577 3.27H.494C.219 4.046 0 4.246 0 4.498c0 .251.219.458.494.458h11.805L8.722 8.22a.435.435 0 000 .645c.197.18.515.18.705 0l4.425-4.046a.418.418 0 000-.638L9.427.135z'></path></svg>") ;
+				animation : changeSymbolOut .3s ease-in-out forwards ;
+			}
+			footer #bul_pl_footer_library_links a:hover:after, footer #bul_pl_footer_brown_links a:hover:after, footer a.footer_give_link:hover:after {
+				content: " " url("data:image/svg+xml;utf8,<svg viewBox='0 -20 38 38' xmlns='http://www.w3.org/2000/svg' width='24px' height='24px' fill='white'><path d='M16.506 8.003l-2.633 2.44a5.617 5.617 0 00-.383-2.676l1.376-1.3a2.44 2.44 0 00.793-1.782c0-.65-.264-1.291-.793-1.78a2.816 2.816 0 00-1.922-.735c-.692 0-1.385.244-1.922.734L8.107 5.58c-.529.507-.802 1.157-.802 1.807 0 .65.264 1.291.802 1.781.236.22.355.498.355.768s-.119.54-.355.752c-.22.21-.52.312-.82.312-.292 0-.593-.101-.82-.312C5.492 9.768 5 8.568 5 7.37c0-1.199.492-2.398 1.467-3.31l2.897-2.676A5.234 5.234 0 0112.926 0c1.293 0 2.587.464 3.58 1.384.993.92 1.494 2.12 1.494 3.318 0 1.19-.501 2.38-1.494 3.301zm-4.972 5.934l-2.913 2.697C7.638 17.544 6.345 18 5.043 18c-1.292 0-2.585-.455-3.568-1.366C.492 15.724 0 14.527 0 13.33c0-1.205.492-2.402 1.475-3.312l2.658-2.453a5.7 5.7 0 00.382 2.697l-1.374 1.273a2.423 2.423 0 00-.792 1.778c0 .65.264 1.29.792 1.779.528.489 1.22.733 1.92.733.693 0 1.393-.244 1.921-.733l2.886-2.672c.547-.489.81-1.138.81-1.779 0-.649-.263-1.29-.81-1.778a1.042 1.042 0 01-.336-.776c0-.278.109-.556.336-.767.228-.21.528-.32.838-.32.3 0 .6.11.828.32.984.92 1.466 2.116 1.466 3.313a4.478 4.478 0 01-1.466 3.304z'></path></svg>") ;
+				animation : changeSymbolIn .3s ease-in-out forwards ;
+			}		
+			footer .footer_give_caption {
+			    font-family : "MinionPro",serif ;
+			    font-weight : 400 ;
+			    color : #B7B09C ;
+			    font-size : 1.5rem ;
+			    font-style : italic ;
+			    line-height : 1.5 ;
+			    margin : 0 0 16px ;
+			}
+			
+			footer #bul_pl_footer_sole {
+				grid-area : bul_pl_footer_sole ;
+				background-color : rgba(0,0,0,0.16) ;
+				position : relative ;
+				top : 2px ;
+			}
+			footer #bul_pl_footer_sole_contents {
+				max-width : 1350px ;
+				margin : auto ;
+				display : flex ;
+				flex-direction : row ; 
+				width : 100% ; 
+			}
+			footer #bul_pl_footer_sole_text {
+				color : #B7B09C ;
+				font-family : "MinionPro",serif;
+				font-weight : 400;
+				font-size : 1.25rem ;
+				padding : 5px 0px 5px 20px ;
+				width : calc(100% - 350px) ; 
+			}
+			#bul_pl_footer_sole_social_icons  {
+				margin : 0px ;
+				width : 325px ;
+				padding : 0px ;
+				list-style-type : none ;
+			}
+			#bul_pl_footer_sole_social_icons .social_nav_list {
+				padding : 0px 0px 0px 60px ;
+				margin : 0px ;
+			}
+			#bul_pl_footer_sole_social_icons .social_nav_list .social_nav_item {
+				display : inline ;
+			}
+			
+			#bul_pl_footer_sole_social_icons .social_nav_item .social_nav_link { 
+				padding-top : 10px ;
+				display : inline-block ;
+				background-color : none ;
+				margin-right : 30px ;
+			}
+			
+			@media (max-width : 980px) {
+				footer #bul_pl_footer { 
+					padding : 90px 0px 0px 0px ; 
+					margin : auto ;
+					width : 100% ; 
+					max-width : 720px ; 
+					display : grid ;
+					grid-template-areas : 	"address"
+											"right_aside"
+											"bul_pl_footer_sole" ;
+					grid-template-columns : auto ;
+					grid-template-rows : auto ;
+				}
+				
+				footer #bul_pl_footer_sole_text {
+					max-width : 720px ;
+				}
+				footer .bul_pl_footer_address_phone {
+					display : block ; 
+					padding-left : 0px ; 
+					margin-top : 10px ; 
+				}
+				footer .bul_pl_footer_phone_details_icon {
+					margin-left : 0px ;
+				}
+				footer #bul_pl_footer_library_links li, footer #bul_pl_footer_brown_links li {
+					display : block ;
+					margin-right : 20px ;
+				}
+				footer #right_aside {
+					padding-top : 40px ;
+					padding-bottom : 40px ;
+					padding-left : 0px ;
+					border-top : 1px solid rgba(183,176,156,0.2);
+					border-left : 0px ;
+					margin-right : 50px ;
+					margin-left : 20px ; 
+				}
+				footer #bul_pl_footer { 
+					padding : 55px 0px 0px 0px ; 
+				}
+			}
+			@media (max-width : 740px) {
+				footer #bul_pl_footer_sole_text { 
+					font-size : 0.875rem;
+				}
+			}
+			@media (max-width : 500px) {
+							footer #bul_pl_footer_sole_contents {
+								width : 100% ;
+							}
+							footer #bul_pl_footer_sole_text { 
+								width : 100% ;
+/* 
+								order : 2 ;
+ */
+							}
+							footer #bul_pl_footer_sole_social_icons {
+								width : 100% ; 
+								margin-left : 0px ; 
+/* 
+								order : 1 ;
+ */
+							}
+						}
+			
+		</style>
+		<footer>
+			<div id="bul_pl_footer">
+				<div id="bul_pl_footer_address">
+					<span class="bul_pl_address_name">Brown University Library</span>
+					<div class="bul_pl_address_items">
+						<a class="bul_pl_address_details" href="https://www.google.com/maps/place/John+D.+Rockefeller,+Jr.+Library/@41.8257047,-71.4073376,17z/data=!3m1!4b1!4m5!3m4!1s0x89e44446ec7c0d51:0x2fde92d441a35057!8m2!3d41.8257042!4d-71.4050627" target="_blank">
+							<span class="bul_pl_address_details_icon">
+								<svg class="icon_marker_svg">
+									<use xlink:href="#marker">
+									</use>
+								</svg>
+							</span>
+							<span class="bul_pl_footer_address_details_info">10 Prospect St., Providence RI 02912</span>
+						</a>
+						<a class="bul_pl_footer_address_phone" href="tel:4018632165">
+							<span class="bul_pl_footer_phone_details_icon">
+								<svg class="icon_phone_svg">
+									<use xlink:href="#phone">
+									</use>
+								</svg>
+							</span>
+							<span class="bul_pl_footer_phone_details_info">401&#8209;863&#8209;2165</span>
+						</a>
+					</div>
+					<div id="bul_pl_footer_library_links">
+						<ul>
+							<li>
+								<a href="https://blogs.brown.edu/libnews/e-newsletter-archive/">Newsletter</a>
+							</li>
+							<li>
+								<a href="https://library.brown.edu/about/employment.php">Careers at the Library</a>
+							</li>
+							<li>
+							</li>
+						</ul>
+					</div>
+					<div id="bul_pl_footer_brown_links">
+						<ul>
+							<li>
+								<a href="https://www.brown.edu/Facilities/Facilities_Management/maps/#building/">Campus Map</a>
+							</li>
+							<li>
+								<a href="https://docs.google.com/forms/d/e/1FAIpQLSez5zzTIojVqzlm94RtO8AYUUSGyiI6btVGNbSIdiU2tpaelg/viewform">Contact / Feedback</a>
+							</li>
+							<li>
+								<a href="https://www.brown.edu/website-accessibility">Accessibility</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div id="right_aside">
+					<div class="footer_give">
+						<img class="footer_give_logo" src="https://www.brown.edu/themes/custom/brown/static/images/logo_together.png" alt="Brown Together" style="width : 202px ; "> 
+						<p class="footer_give_caption">The campaign for building on distinction</p>
+						<a class="footer_give_link" href="http://alumni-friends.brown.edu/giving/">Give To Brown</a>
+					</div>
+				</div>
+			</div>
+			<div id="bul_pl_footer_sole">
+				<div id="bul_pl_footer_sole_contents">
+					<div id="bul_pl_footer_sole_text">© Brown University</div>
+					<div id="bul_pl_footer_sole_social_icons">
+						<ul class="social_nav_list" aria-label="Social Navigation">
+							<li class="social_nav_item">
+								<a class="social_nav_link" href="https://www.facebook.com/brownuniversitylibrary" aria-label="Facebook link">
+									<span class="bul_pl_address_details_icon">
+										<svg style="fill : var(--brown_taupe); height : 20px ; width : 20px ;">
+											<use xlink:href="#facebook">
+											</use>
+										</svg>
+									</span>
+								</a>
+							</li>
+							<li class="social_nav_item">
+								<a class="social_nav_link" href="https://www.instagram.com/brownuniversitylibrary/" aria-label="Instagram link">
+									<svg style="fill : var(--brown_taupe); height : 20px ; width : 20px ;">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" id="instagram">
+											<path d="M12.96 0H4.94A4.946 4.946 0 000 4.94v8.02a4.945 4.945 0 004.94 4.94h8.02a4.946 4.946 0 004.94-4.94V4.94A4.946 4.946 0 0012.96 0zm3.353 12.96a3.356 3.356 0 01-3.352 3.352H4.94a3.355 3.355 0 01-3.352-3.351V4.94A3.355 3.355 0 014.94 1.588h8.02a3.356 3.356 0 013.352 3.352v8.02z">
+											</path>
+											<path d="M8.95 4.338a4.618 4.618 0 00-4.612 4.613 4.618 4.618 0 004.612 4.612 4.618 4.618 0 004.613-4.612A4.618 4.618 0 008.95 4.338zm0 7.637A3.028 3.028 0 015.926 8.95 3.028 3.028 0 018.95 5.926a3.028 3.028 0 013.025 3.024 3.028 3.028 0 01-3.025 3.025zM13.756 2.991a1.17 1.17 0 00-1.164 1.165c0 .306.125.607.342.824.216.216.516.34.822.34.307 0 .607-.124.824-.34a1.17 1.17 0 000-1.648 1.17 1.17 0 00-.824-.34z">
+											</path>
+										</svg>
+									</svg>
+								</a>
+							</li>
+							<li class="social_nav_item">
+								<a class="social_nav_link" href="https://twitter.com/brownlibrary" aria-label="Twitter link">
+									<span class="bul_pl_address_details_icon">
+										<svg style="fill : var(--brown_taupe); height : 20px ; width : 20px ;">
+											<use xlink:href="#twitter">
+											</use>
+										</svg>
+									</span>
+								</a>
+							</li>
+							<li class="social_nav_item">
+								<a class="social_nav_link" href="https://www.youtube.com/user/brownlibrary" aria-label="YouTube link">
+									<span class="bul_pl_address_details_icon">
+										<svg style="fill : var(--brown_taupe); height : 20px ; width : 20px ;">
+											<use xlink:href="#youtube">
+											</use>
+										</svg>
+									</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
