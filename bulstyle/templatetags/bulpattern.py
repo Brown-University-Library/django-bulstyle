@@ -58,7 +58,9 @@ def get_header_template(config_key):
     return BACKUP_HEADER_TEMPLATE
 
 @register.simple_tag(takes_context=True)
-def bul_header(context, bul_key=settings.header_subnav_key(), bul_login_key=settings.header_subnav_key()):
+def bul_header(context,
+               bul_key=settings.header_subnav_key(),
+               bul_login_key=settings.header_subnav_login_key()):
     request = context['request']
     config_string = get_config(request, bul_key, bul_login_key)
     bul_header_template = get_header_template(config_string)

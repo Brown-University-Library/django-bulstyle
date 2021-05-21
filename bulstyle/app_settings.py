@@ -34,7 +34,7 @@ def header_subnav_key():
     return get_bulstyle_setting('header_subnav_key')
 
 def header_subnav_login_key():
-    return get_bulstyle_setting('header_subnav_login_key')
+    return get_bulstyle_setting('header_subnav_login_key') or header_subnav_key()
 
 def header_local_backup():
     return get_bulstyle_setting('header_local_backup')
