@@ -75,6 +75,8 @@ Optional Settings
         'header_cache_length': 500, #Default
         'header_subnav_key': '', #Default
         'header_subnav_login_key': '', #Default
+        'footer_url': 'https://library.brown.edu/common/includes/bul_pl_footer.php', #Default
+        'footer_cache_length': 5000, #Default
   }
   ```
 
