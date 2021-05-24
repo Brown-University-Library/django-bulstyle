@@ -24,7 +24,6 @@
       flex-direction: column;
     }
     footer {
-      background: var(--brown_brown);
       height: unset;
       margin-top: auto;
     }
@@ -107,19 +106,7 @@
 </div> 
 
 {% block footer %}
-  <footer>
-    <div class="{{container_class}}">
-        <div class="row">
-          <ul class="pull-right footcrumbs">
-            {% block footer-list %}
-            <li>
-              <a href="//library.brown.edu">Brown&nbsp;University&nbsp;Library</a>
-            </li>
-            {% endblock %}
-          </ul>
-        </div>
-      </div>
-  </footer>
+  {% bul_footer %}
 {% endblock %}
 {% endblock %}
 

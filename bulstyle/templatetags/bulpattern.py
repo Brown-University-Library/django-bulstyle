@@ -8,6 +8,7 @@ import requests
 register = template.Library()
 django_engine = template.engines['django']
 BACKUP_HEADER_TEMPLATE = get_template(settings.header_local_backup())
+BACKUP_FOOTER_STRING = get_template(settings.footer_local_backup())
 
 def get_user_context(request):
     user = request.user
@@ -25,15 +26,21 @@ def get_config(request, non_auth_key, logged_in_key):
         return logged_in_key
     return non_auth_key
 
-def set_header_in_cache(cache_key, header):
+def set_in_cache(cache_key, header):
     cache.set(
         cache_key,
         header,
         timeout=settings.header_cache_length()
     )
 
-def get_header_from_cache(cache_key):
+def get_from_cache(cache_key):
     return cache.get(cache_key)
+
+def get_footer_from_api():
+    r = requests.get(settings.footer_url())
+    if r.ok:
+        return r.content.decode('utf8')
+    return ""
 
 def get_header_from_api(config_key):
     params = {'z': config_key}
@@ -44,11 +51,11 @@ def get_header_from_api(config_key):
 
 def get_header_string(config_key):
     cache_key = f"bulheader:{config_key}"
-    header = get_header_from_cache(cache_key)
+    header = get_from_cache(cache_key)
     if not header:
         header = get_header_from_api(config_key)
         if header:
-            set_header_in_cache(cache_key, header)
+            set_in_cache(cache_key, header)
     return header
 
 def get_header_template(config_key):
@@ -58,7 +65,9 @@ def get_header_template(config_key):
     return BACKUP_HEADER_TEMPLATE
 
 @register.simple_tag(takes_context=True)
-def bul_header(context, bul_key=settings.header_subnav_key(), bul_login_key=settings.header_subnav_key()):
+def bul_header(context,
+               bul_key=settings.header_subnav_key(),
+               bul_login_key=settings.header_subnav_login_key()):
     request = context['request']
     config_string = get_config(request, bul_key, bul_login_key)
     bul_header_template = get_header_template(config_string)
@@ -68,3 +77,19 @@ def bul_header(context, bul_key=settings.header_subnav_key(), bul_login_key=sett
             user_context
         )
     )
+
+def get_footer_string():
+    cache_key = f"bulfooter"
+    footer = get_from_cache(cache_key)
+    if not footer:
+        footer = get_footer_from_api()
+        if footer:
+            set_in_cache(cache_key, footer)
+        else:
+            footer = BACKUP_FOOTER_STRING.render()
+    return footer
+
+@register.simple_tag
+def bul_footer():
+    bul_footer_template = get_footer_string()
+    return mark_safe(bul_footer_template)
