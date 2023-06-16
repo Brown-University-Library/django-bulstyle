@@ -1,33 +1,13 @@
-<!-- FOO-BULSTYLE-A -->
-
 {% extends "bootstrap3/bootstrap3.html" %}
-
-<!-- FOO-BULSTYLE-B -->
-
 {% load bulstyle %}
-
-<!-- FOO-BULSTYLE-C -->
-
 {% load bulpattern %}
 
-<!-- FOO-BULSTYLE-D -->
-
 {% block bootstrap3_title %}
-
-  <!-- FOO-BULSTYLE-E -->
-
+  {% include "_google_analytics.html" %}
   {% block title %}Brown University Library | {% block title_detail %}Home{% endblock %}{% endblock title %}
-
-  <!-- FOO-BULSTYLE-F -->
-
 {% endblock %}
 
-<!-- FOO-BULSTYLE-G -->
-
 {% block bootstrap3_extra_head %}
-
-  <!-- FOO-BULSTYLE-H -->
-
    <link rel="icon" type="image/png" sizes="16x16"
         href="https://www.brown.edu/themes/custom/brown/static/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32"
