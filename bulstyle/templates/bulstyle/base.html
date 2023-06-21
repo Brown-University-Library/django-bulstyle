@@ -1,19 +1,26 @@
 {% extends "bootstrap3/bootstrap3.html" %}
+<!-- FOO-A -->
 {% load bulstyle %}
+<!-- FOO-B -->
 {% load bulpattern %}
-
+<!-- FOO-C -->
 {% block bootstrap3_title %}
+  <!-- FOO-D -->
   {% block title %}Brown University Library | {% block title_detail %}Home{% endblock %}{% endblock title %}
 {% endblock %}
-
+<!-- FOO-E -->
 {% block bootstrap3_extra_head %}
+  <!-- FOO-F -->
    <link rel="icon" type="image/png" sizes="16x16"
         href="https://www.brown.edu/themes/custom/brown/static/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32"
         href="https://www.brown.edu/themes/custom/brown/static/favicon-32x32.png">
   <link rel="stylesheet"
         href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  {% block extra_css %}{% endblock extra_css %}
+  {% block extra_css %}
+    <!-- FOO-G -->
+  {% endblock extra_css %}
+  <!-- FOO-H -->
   <style type="text/css" media="all">
     html {
       font-size: unset;
@@ -39,15 +46,17 @@
       margin-right: 0.5em;
   }
   </style>
+  <!-- FOO-I -->
 {% endblock %}
-
+<!-- FOO-J -->
 {% block bootstrap3_content %}
+  <!-- FOO-K -->
 
   {% bulstyle_container as container_class %}
   {% block library_navigation %}
-  {% bul_header %}
+    <!-- FOO-L -->
+    {% bul_header %}
   {% endblock %}
-
 
   <div class="{{container_class}}">
     {% include "bulstyle/messages.html" %}
@@ -55,6 +64,7 @@
 
   <div class="{{container_class}}">
   {% block pre_intro %}
+    <!-- FOO-M -->
   {% endblock %}
 </div>
 
@@ -76,6 +86,7 @@
 
   <div class="row">
     {% block content %}
+      <!-- FOO-N -->
       <section>
         <div class="col-md-3">
           {% block content_sidebar %} {% endblock %}
