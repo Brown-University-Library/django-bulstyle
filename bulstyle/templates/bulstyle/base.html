@@ -3,97 +3,103 @@
 {% load bulpattern %}
 
 {% block bootstrap3_title %}
-  {% block title %}Brown University Library | {% block title_detail %}Home{% endblock %}{% endblock title %}
-{% endblock %}
+    {% block title %}Brown University Library | {% block title_detail %}Home{% endblock title_detail %}{% endblock title %}
+{% endblock bootstrap3_title %}
 
 {% block bootstrap3_extra_head %}
-   <link rel="icon" type="image/png" sizes="16x16"
-        href="https://www.brown.edu/themes/custom/brown/static/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32"
-        href="https://www.brown.edu/themes/custom/brown/static/favicon-32x32.png">
-  <link rel="stylesheet"
-        href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  {% block extra_css %}{% endblock extra_css %}
-  <style type="text/css" media="all">
-    html {
-      font-size: unset;
-    }
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    .modal {
-      z-index: 1000001;
-    }
 
-  .panel-title > a {
-    color: var(--brown_red, #c00404);
-  }
+    {% block bulstyle_extra_head %}
+    {% endblock bulstyle_extra_head %}
 
-  a > .fa {
-    text-decoration: none;
-  }
-  h3 .fa:before {
-      color: #aaa;
-      margin-right: 0.5em;
-  }
-  </style>
-{% endblock %}
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.brown.edu/themes/custom/brown/static/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.brown.edu/themes/custom/brown/static/favicon-32x32.png">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    
+    {% block extra_css %}
+    {% endblock extra_css %}
+
+    <style type="text/css" media="all">
+        html {
+        font-size: unset;
+        }
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .modal {
+            z-index: 1000001;
+        }
+        .panel-title > a {
+            color: var(--brown_red, #c00404);
+        }
+        a > .fa {
+            text-decoration: none;
+        }
+        h3 .fa:before {
+            color: #aaa;
+            margin-right: 0.5em;
+        }
+    </style>
+{% endblock bootstrap3_extra_head %}
 
 {% block bootstrap3_content %}
+    {% bulstyle_container as container_class %}
+    
+    {% block library_navigation %}
+        {% bul_header %}
+    {% endblock library_navigation %}
 
-  {% bulstyle_container as container_class %}
-  {% block library_navigation %}
-  {% bul_header %}
-  {% endblock %}
+    <div class="{{container_class}}">
+        {% include "bulstyle/messages.html" %}
+    </div>
 
+    <div class="{{container_class}}">
+        {% block pre_intro %}
+        {% endblock pre_intro %}
+    </div>
 
-  <div class="{{container_class}}">
-    {% include "bulstyle/messages.html" %}
-  </div>
+    <div class="{{container_class}}">
 
-  <div class="{{container_class}}">
-  {% block pre_intro %}
-  {% endblock %}
-</div>
-
-<div class="{{container_class}}">
-  <div class="row ">
-      <section>
-    {% block intro %} 
-        <div class="col-md-9">
-          {% block intro_main %}
-          {% endblock %}
+        <div class="row ">
+            <section>
+            {% block intro %} 
+                <div class="col-md-9">
+                    {% block intro_main %}
+                    {% endblock intro_main %}
+                </div>
+                <div class="col-md-3">
+                    {% block intro_sidebar %}
+                    {% endblock intro_sidebar %}
+                </div>
+            {% endblock intro %}
+            </section>
         </div>
-        <div class="col-md-3">
-          {% block intro_sidebar %}
-          {% endblock %}
-          </div>
-    {% endblock %}
-      </section>
-  </div>
 
-  <div class="row">
-    {% block content %}
-      <section>
-        <div class="col-md-3">
-          {% block content_sidebar %} {% endblock %}
+        <div class="row">
+            {% block content %}
+                <section>
+                    <div class="col-md-3">
+                        {% block content_sidebar %} 
+                        {% endblock content_sidebar %}
+                    </div>
+                    <div class="col-md-9">
+                        {% block content_main %} 
+                        {% endblock content_main %}
+                    </div>
+                </section> {# note that this closing section and endblock have a different structure than above #}
+            {% endblock content %}
         </div>
-        <div class="col-md-9">
-          {% block content_main %} {% endblock %}
-        </div>
-      </section>
-    {% endblock %}
-  </div>
-</div> 
 
-{% block footer %}
-  {% bul_footer %}
-{% endblock %}
-{% endblock %}
+    </div> <!-- end of div class=django-container_class-variable -->
+
+    {% block footer %}
+        {% bul_footer %}
+    {% endblock footer %}
+
+{% endblock bootstrap3_content %}
 
 {% block bootstrap3_extra_script %}
-  {% block extra_js %}
-  {% endblock extra_js %}
-{% endblock %}
+    {% block extra_js %}
+    {% endblock extra_js %}
+{% endblock bootstrap3_extra_script %}
