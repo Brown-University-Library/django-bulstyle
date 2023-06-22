@@ -3,17 +3,21 @@
 {% load bulpattern %}
 
 {% block bootstrap3_title %}
-    {% block title %}Brown University Library | {% block title_detail %}Home{% endblock %}{% endblock title %}
+    {% block title %}Brown University Library | {% block title_detail %}Home{% endblock title_detail %}{% endblock title %}
 {% endblock bootstrap3_title %}
 
 {% block bootstrap3_extra_head %}
+
     {% block bulstyle_extra_head %}
     {% endblock bulstyle_extra_head %}
+
     <link rel="icon" type="image/png" sizes="16x16" href="https://www.brown.edu/themes/custom/brown/static/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://www.brown.edu/themes/custom/brown/static/favicon-32x32.png">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    
     {% block extra_css %}
     {% endblock extra_css %}
+
     <style type="text/css" media="all">
         html {
         font-size: unset;
@@ -41,6 +45,7 @@
 
 {% block bootstrap3_content %}
     {% bulstyle_container as container_class %}
+    
     {% block library_navigation %}
         {% bul_header %}
     {% endblock library_navigation %}
