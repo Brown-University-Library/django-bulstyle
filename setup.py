@@ -8,7 +8,7 @@ setup(
     zip_safe=False,
     include_package_data=True,
     install_requires=[
-        'django-bootstrap3',
+        'django-bootstrap4',
         'requests',
     ],
 )

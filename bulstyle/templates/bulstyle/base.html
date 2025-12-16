@@ -1,12 +1,12 @@
-{% extends "bootstrap3/bootstrap3.html" %}
+{% extends "bootstrap4/bootstrap4.html" %}
 {% load bulstyle %}
 {% load bulpattern %}
 
-{% block bootstrap3_title %}
+{% block bootstrap4_title %}
     {% block title %}Brown University Library | {% block title_detail %}Home{% endblock title_detail %}{% endblock title %}
-{% endblock bootstrap3_title %}
+{% endblock bootstrap4_title %}
 
-{% block bootstrap3_extra_head %}
+{% block bootstrap4_extra_head %}
 
     {% block bulstyle_extra_head %}
     {% endblock bulstyle_extra_head %}
@@ -41,9 +41,9 @@
             margin-right: 0.5em;
         }
     </style>
-{% endblock bootstrap3_extra_head %}
+{% endblock bootstrap4_extra_head %}
 
-{% block bootstrap3_content %}
+{% block bootstrap4_content %}
     {% bulstyle_container as container_class %}
     
     {% block library_navigation %}
@@ -97,9 +97,9 @@
         {% bul_footer %}
     {% endblock footer %}
 
-{% endblock bootstrap3_content %}
+{% endblock bootstrap4_content %}
 
-{% block bootstrap3_extra_script %}
+{% block bootstrap4_extra_script %}
     {% block extra_js %}
     {% endblock extra_js %}
-{% endblock bootstrap3_extra_script %}
+{% endblock bootstrap4_extra_script %}

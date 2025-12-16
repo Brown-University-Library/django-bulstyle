@@ -25,7 +25,7 @@ Installation and configuration
   * Add `bulstyle/css/bulstyle.css` to you BOOTSRAP3 settings
   
     ```python
-    BOOTSTRAP3 = {
+    BOOTSTRAP4 = {
       # other settings
       'css_url': os.path.join('',STATIC_URL,'bulstyle/css/bulstyle.css'),
     }
@@ -44,7 +44,7 @@ Include Blacklight themes
   with `bulstyle-blacklight.css`
 
     ```python
-    BOOTSTRAP3 = {
+    BOOTSTRAP4 = {
       # other settings
       'css_url': os.path.join('',STATIC_URL,'bulstyle/css/bulstyle-blacklight.css'),
     }
@@ -108,7 +108,7 @@ Legacy Theme
   with `project.css`
 
     ```python
-    BOOTSTRAP3 = {
+    BOOTSTRAP4 = {
       # other settings
       'css_url': os.path.join('',STATIC_URL,'bulstyle/css/project.css'),
     }
