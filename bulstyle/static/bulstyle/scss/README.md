@@ -4,7 +4,7 @@ BULSTYLE SCSS Source Files
 These are the scss source files to buils the bulstyle-base.css 
 and bulstyle-blacklight.css files.
 
-You will need some sort of sass comiler.
+You will need some sort of sass compiler.
 
 `pip install libsass` will install libsass along with python bindings.
 
