@@ -5,6 +5,9 @@
    edits also made to: blacklight.css.scss
    additional edits to come to tweak responsive breakpoints
 */
+.container>ol.breadcrumb + a {
+  margin-inline-start: 16px;
+}
 #topmost-nav-links {
   margin-left: auto;
   margin-right: auto;
