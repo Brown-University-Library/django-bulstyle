@@ -44,12 +44,15 @@
 {% endblock bootstrap3_extra_head %}
 
 {% block bootstrap3_content %}
+    <header>
     {% bulstyle_container as container_class %}
     
     {% block library_navigation %}
         {% bul_header %}
     {% endblock library_navigation %}
+    </header>
 
+    <main>
     <div class="{{container_class}}">
         {% include "bulstyle/messages.html" %}
     </div>
@@ -92,10 +95,13 @@
         </div>
 
     </div> <!-- end of div class=django-container_class-variable -->
+    </main>
 
+    <footer>
     {% block footer %}
         {% bul_footer %}
     {% endblock footer %}
+    </footer>
 
 {% endblock bootstrap3_content %}
 
