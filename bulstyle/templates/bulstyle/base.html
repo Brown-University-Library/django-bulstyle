@@ -82,11 +82,14 @@
         <div class="row">
             {% block content %}
                 <section>
-                    <div class="col-md-3">
-                        {% block content_sidebar %} 
+                    <div class="col-md-3" id="content-sidebar">
+                      <a href="#content-main" class="skip_link">
+                        Skip to main content
+                      </a>
+                        {% block content_sidebar %}
                         {% endblock content_sidebar %}
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-9" id="content-main">
                         {% block content_main %} 
                         {% endblock content_main %}
                     </div>
