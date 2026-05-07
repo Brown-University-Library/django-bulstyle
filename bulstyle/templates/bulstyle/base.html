@@ -82,13 +82,13 @@
         <div class="row">
             {% block content %}
                 <section>
-                    <div class="col-md-3">
-                        {% block content_sidebar %} 
-                        {% endblock content_sidebar %}
-                    </div>
-                    <div class="col-md-9">
+                    <div class="col-md-9 pull-right">
                         {% block content_main %} 
                         {% endblock content_main %}
+                    </div>
+                    <div class="col-md-3" id="content-sidebar">
+                        {% block content_sidebar %}
+                        {% endblock content_sidebar %}
                     </div>
                 </section> {# note that this closing section and endblock have a different structure than above #}
             {% endblock content %}
