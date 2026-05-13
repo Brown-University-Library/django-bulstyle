@@ -77,6 +77,15 @@
 .start-over a {
   display: none; }
 
+a.skip_link {
+  position:absolute;
+  left:-999999px;
+  &:hover, &:focus {
+    left:50%;
+    translate: -50% 0;
+  }
+}
+
 .input-group-addon {
   background: none;
   width: auto;
